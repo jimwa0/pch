@@ -9,6 +9,9 @@ determines current PC number (and class) based on piece count and queue
 ## msg - **m**inimal **s**etup **g**enerator
 generates a fumen code or ascii drawing of a setup
 
+## ftd - **f**umen **t**erminal **d**isplay
+displays fumen codes as terminal text images
+
 ## qxp - **q**ueue e**x**pression **p**rinter
 generates all possible queues from a queue regex (like sfinder or wirelyre)
 
