@@ -1,6 +1,11 @@
 # pch - Perfect Clear Helper CLI Tools
 
+
 # installation and build
+```sh
+
+```
+
 
 # commands
 ## pcn - **p**erfect **c**lear **n**umber finder
@@ -10,11 +15,11 @@ Usage:
   pcn <piece_count> [options]
 
 Options:
-  -Q, --queue <queue>       Input a queue in order (e.g. IJLOSTZ). Also outputs PC class (including 8th, 9th, and dupe).
+  -Q, --queue <queue>       Determines 8th and 9th and outputs PC class.
   -b, --brief               Minimal human readable output.
   -q, --quiet               Suppress output; sets exit code: 0 = success, 1 = fail.
   -v, --version             Show version information.
-  -h, --help                Show this help message.<
+  -h, --help                Show this help message.
 ```
 <!-- maybe verbose with more stats like pc chance -->
 
@@ -39,6 +44,7 @@ Options:
 ```
 <!-- maybe queue input shows possible setups -->
 <!-- color and alternatives feels a bit iffy in implementaton. basic build is colored instead? -->
+<!-- skin? -->
 
 
 ## ftd - **f**umen **t**erminal **d**isplay
@@ -48,12 +54,14 @@ Usage:
   ftd <fumen_code> [options]
 
 Options:
-  -h, --height <height>     The height of the output (bottom to top)        
-  -w, --width <width>       The width of the output (left to right)
-  --no-whitespace           Automatically sets height and width to remove all whitespace
-  -p, --page <page_num>     
-  -o, --once                
-  -d, --duration <duration> How long one frame should last in seconds.
+  -h, --height <height>     The height of the output (bottom to top).
+  -w, --width <width>       The width of the output (left to right).
+  -m, --minimal             Automatically chooses the smallest width and height without cutoffs.
+  -r, --reactive            Automatically chosses the smallest width and height without cutoffs for each page.
+  -p, --page <page_num>     Outputs a specfic page number. (default = 1)
+  -l, --loop <loops>        Loops animation. (no argument loops forever)
+  -d, --duration <duration> How long one frame should last in a loop in seconds. (default = 1) (only valid with --loop)
+  -s, --show <num_pieces>   Determines number of pieces to show in queue.
   --always-hide-queue       Always hides queue.
   --always-hide-hold        Always hides hold.
   --always-hide-pending     Always hides pending attack.
@@ -64,7 +72,7 @@ Options:
   --always-show-comments    Always displays comments.
   -q, --quiet               Suppress output; sets exit code: 0 = success, 1 = fail.
   -v, --version             Show version information.
-  -h, --help                Show this help message.<
+  -h, --help                Show this help message.
 ```
 <!-- have a way to change skin ? -->
 <!-- grid? -->
@@ -79,18 +87,21 @@ Usage:
 
 
 ## qxp - **q**ueue e**x**pression **p**rinter
-generates all possible queues from a queue regex (like sfinder or wirelyre)
+generates possible queues from a queue regex (like sfinder or wirelyre)
 ```
 Usage:
   qxp <queue-exp> [options]
 
 Options:
-  -n, --number              Outputs number of possibilities.
+  -s, --style <style>       Chooses queue expression style solution-finder (default) or wirelyre.
+  -n, --number <num>        Outputs <num> of queues.
+  --unique                  Ensure all outputed queues are unique (only valid with -n or --number)
+  -a, --all                 Outputs all possible queues.
+  -t, --total-number        Outputs total number of queues.
   -q, --quiet               Suppress output; sets exit code: 0 = success, 1 = fail.
   -v, --version             Show version information.
   -h, --help                Show this help message.
 ```
-<!-- might need to rethink - if we're printing stuff it might be too much -->
 
 
 ## qrs - **q**ueue **r**e**s**orter
@@ -100,7 +111,7 @@ Usage:
   qrs <queue> [options]
 
 Options:
-  -d, --dictate             Dictates the order which pieces are sorted (e.g. "TIOJLSZ") (default: "knewjade" or "TIJLSZO")
+  -o, --order               Dictates the order which pieces are sorted (e.g. "TJLIOSZ"). (default: "knewjade" or "TIJLSZO")
   -upper, --uppercase       Converts all pieces into uppercase letters.
   -lower, --lowercase       Converts all pieces into lowercase letters.
   -u, --unique              Removes duplicate pieces from the output.
@@ -114,3 +125,6 @@ Options:
 <!-- input to fumen -->
   <!-- -Q, --queue <queue> Outputs with order (e.g. IJLOSTZ)  -H, --hold <piece> Outputs with hold piece -->
 <!-- kbh, konbini helper? -->
+<!-- flh, four.lol helper? -->
+<!-- sfinder? -->
+<!-- tetrio font generator -->

@@ -1,13 +1,84 @@
 #include <iostream>
 #include <string>
+#include <unordered_set>
 
-int main(int p, std::string q, bool qFlag) {
-	// check for valid input
-	// positive int pieces, TIJLSZO
+
+char pieces = {'T', 'I', 'L', 'J', 'S', 'Z', 'O'};
+
+    // int count[7] = {0}; // TIJLSZO
+    // for (int i=0; i<=6; ++i) {
+    //   if (Q[i] == pieces[i])
+    //     pieces[i]++;
+
+
+std::string determine8th(std::string queue) {
+  if ((n == 1) && (queueSize >= 7)) {
+    int count[7] = {0}; // TIJLSZO
+    for (int i=0; i<=6; ++i) {
+      if (queue[i] == pieces[i])
+        pieces[i]++;
+    }
+
+  } else {return "";}
+}
+
+
+
+
+int main() {
+  // PARSE
+  int p = 3650;
+  std::string& Q = "TLOJISZ";
+  bool brief = false;
+  bool quiet = false;
+  bool version = false;
+  bool help = false;
+  
+  
+  // VALIDATE
+  // piece count
+  if ((p > 0) && (p % 5 == 0); {
+    // valid case
+  } else {
+    std::cerr << "Invalid input: piece count must be positive and divisible by 5.\n";
+    return 1;
+  }
+
+  // queue
+  static const std::unordered_set<char> validPieces {
+    'T', 'I', 'L', 'J', 'S', 'Z', 'O',
+    't', 'i', 'l', 'j', 's', 'z', 'o'
+  };
+
+  for (char c : Q) {
+    if (validPieces.find(c) == validPieces.end()) {
+      std:cerr << "Invalid input: queue can only contain these characters: TIJLSZOtijlszo"
+      return 1;
+    }
+  }
 	
-	int n = ((p)*5)%7+1;	// pc number
+
+  // WORK
+	int n = ((p)*5)%7+1;
+  int queueSize = Q.length();
+  std::string 8thClass = "";
+  std::string 9thClass = "";
+
+  if (queueSize > 0) {
+    } else if ((n == 2) && (queueSize >= 4)) {  // determine if 9th
+      //TT[L,J]X
+    }
+  }
 	// determine if 8th or 9th if n=1 or 2
 	
+
+  // OUTPUT
+
+
+
+
+
+  
 	if (qFlag == true) {
 		if (q.size() > 0) {
 			std::cout << n << " " << q << endl;
