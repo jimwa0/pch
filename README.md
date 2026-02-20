@@ -11,7 +11,7 @@
 ---
 
 # Commands
-## Perfect Clear Number Finder
+## number, Perfect Clear Number Finder
 determines current PC number (and class) based on piece count and queue
 ```
 Usage:
@@ -20,28 +20,30 @@ Usage:
 Options:
   -q, --queue <queue>       Determines 8th and 9th based on queue.
   -c, --class               Given a queue, also determine its class ("2 TILO", "6 no L").
+  -v, --verbose 
   -Q, --quiet               Suppress output; sets exit code: 0 = success, 1 = fail.
   -V, --version             Show version information.
   -h, --help                Show this help message.
 ```
 <!-- maybe verbose with more stats like pc chance -->
+<!-- actually i think normal output with class should be like 7tsz or 6o and verbose makes it TSZ 7th or No O 6th -->
 
 
-## Fumen Terminal Display
+## fumen, Fumen Terminal Display
 displays fumen codes as terminal text images
 ```
 Usage:
   pch fumen <fumen_code> [options]
 
 Options:
-  - , --page                Outputs a specific page as opposed to all pages.
-  - , --less                Pipes output to less.
-  - , --max                 Use full 20x10 size.
-  - , --min                 Use minimal board size.
-  - , --comment             Show comments.
-  - , --queue               Show queue.
-  - , --hold                Show hold piece.
-  - , --pending             Show pending garbage.
+  -p, --page                Outputs a specific page as opposed to all pages.
+  -l, --less                Pipes output to less.
+  -m, --min                 Use minimal board size (JUST whats to be drawn). (DEFAULT)
+  -M, --max                 Use full 20x10 size.
+  -c, --comment             Show comments.
+  -q, --queue               Show queue.
+  -h, --hold                Show hold piece.
+  -g, --pending             Show pending garbage.
   -Q, --quiet               Suppress output; sets exit code: 0 = success, 1 = fail.
   -V, --version             Show version information.
   -h, --help                Show this help message.
@@ -67,7 +69,7 @@ Options:
 <!-- grid? -->
 
 
-## Minimal Setup Generator
+## setup, Minimal Setup Generator
 generates an ascii drawing or fumen code of a setup
 ```
 Usage:
@@ -87,7 +89,7 @@ Options:
 <!-- skin? -->
 
 
-## Queue Sorter
+## sort, Queue Sorter
 sorts an input queue into a specific order (knewjade order or any other). Useful for standardizing PC setup names.
 ```
 Usage:
@@ -106,7 +108,7 @@ Options:
 <!--anchor dupe-->
 
 
-## Queue Expression Output
+## qx, Queue Expression Output
 generates possible queues from a queue regex (like sfinder or wirelyre)
 ```
 Usage:
@@ -114,8 +116,10 @@ Usage:
 
 Options:
   -f, --format <format>     Chooses queue expression style "s-finder" (default) or "wirelyre" (DEFAULT).
+  -upper, --uppercase       Converts all pieces into uppercase letters.
+  -lower, --lowercase       Converts all pieces into lowercase letters.
+  -l, --limit <num>         Outputs <num> of queues to be output.
   -n, --number              Outputs the number of possible queues instead.
-  -l, --limit <num>         Outputs <num> of queues.
   -Q, --quiet               Suppress output; sets exit code: 0 = success, 1 = fail.
   -V, --version             Show version information.
   -h, --help                Show this help message.
